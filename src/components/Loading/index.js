@@ -6,7 +6,6 @@ export const Loading = () => {
   return (
     <Container>
       <LoadingCircle />
-      <LoadingCircle delay={1000} />
     </Container>
   );
 };

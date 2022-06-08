@@ -15,6 +15,11 @@ const rotate = keyframes`
     transform: rotate(0deg);
     opacity: 0 ;
   }
+  25% {
+    transform: rotate(90deg);
+    transform: scale(1.3) rotate(360deg);
+    opacity: .3 ;
+  }
   50% {
     transform: rotate(180deg);
     transform: scale(1.5) rotate(360deg);
@@ -22,8 +27,8 @@ const rotate = keyframes`
   }
 
   100% {
-    opacity: 0 ;
-    transform: scale(2) rotate(360deg);
+    opacity: .8 ;
+    transform: scale(1.8) rotate(360deg);
   }
 `;
 

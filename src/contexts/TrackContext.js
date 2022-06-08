@@ -1,7 +1,7 @@
-import React, { useState, useEffect, createContext, useContext } from "react";
+import React, { useState, useEffect, createContext } from "react";
 import axios from "axios";
 
-const IPTrackContext = createContext();
+export const IPTrackContext = createContext();
 
 export const IPTrackProvider = ({ children }) => {
   const [infosTrack, setInfosTrack] = useState({});
@@ -54,10 +54,4 @@ export const IPTrackProvider = ({ children }) => {
       {children}
     </IPTrackContext.Provider>
   );
-};
-
-export const useTrack = () => {
-  const context = useContext(IPTrackContext);
-
-  return context;
 };

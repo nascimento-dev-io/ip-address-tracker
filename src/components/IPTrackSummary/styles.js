@@ -3,7 +3,7 @@ import styled, { keyframes } from "styled-components";
 export const Container = styled.div`
   width: 70%;
 
-  margin-top: 30px;
+  margin-top: 40px;
   border: 1px solid #5977df;
   background-color: white;
 

@@ -1,5 +1,4 @@
-import React from "react";
-import { useTrack } from "../../hooks/useTrack";
+import React, { useContext } from "react";
 
 import {
   Container,
@@ -9,9 +8,10 @@ import {
 } from "./styles";
 
 import { Loading } from "../Loading";
+import { IPTrackContext } from "../../contexts/TrackContext";
 
 export const IPTrackSummary = () => {
-  const { infosTrack, loading, error } = useTrack();
+  const { infosTrack, loading, error } = useContext(IPTrackContext);
 
   return (
     <>

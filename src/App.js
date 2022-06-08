@@ -1,15 +1,15 @@
 import { GlobalStyles } from "./globals";
 import { Header } from "./components/Header";
 import { MapLocation } from "./components/MapLocation";
-import { IPTrackProvider } from "./hooks/useTrack";
+import { AppContextProvider } from "./contexts";
 
 const App = () => {
   return (
-    <IPTrackProvider>
+    <AppContextProvider>
       <GlobalStyles />
       <Header />
       <MapLocation />
-    </IPTrackProvider>
+    </AppContextProvider>
   );
 };
 

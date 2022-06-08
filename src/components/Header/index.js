@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import { IPTrackSummary } from "../IPTrackSummary";
 
 import { Container, Title, FormSearch } from "./styles";
 
 import iconButton from "../../assets/images/icon-arrow.svg";
-import { useTrack } from "../../hooks/useTrack";
+import { IPTrackContext } from "../../contexts/TrackContext";
 
 export const Header = () => {
   const [inputSearch, setInputSearch] = useState("");
-  const { infosTrack, getIpTrackInfo } = useTrack();
+  const { infosTrack, getIpTrackInfo } = useContext(IPTrackContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
