@@ -5,6 +5,8 @@ export const IPTrackContext = createContext();
 
 export const IPTrackProvider = ({ children }) => {
   const [infosTrack, setInfosTrack] = useState({});
+  const [coordinates, setCoordinates] = useState({ lat: 0, lng: 0 });
+
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
@@ -23,7 +25,7 @@ export const IPTrackProvider = ({ children }) => {
       setLoading(true);
       setError(false);
       const response = await axios.get(
-        `https://geo.ipify.org/api/v2/country?apiKey=at_UcPGOp903hv8vnYHi9lnF52tcoIi2&${data}`
+        `https://geo.ipify.org/api/v2/country,city?apiKey=at_UcPGOp903hv8vnYHi9lnF52tcoIi2&${data}`
       );
 
       const { ip, isp, location } = await response.data;
@@ -33,6 +35,8 @@ export const IPTrackProvider = ({ children }) => {
         timezone: location.timezone,
         isp,
       });
+
+      setCoordinates({ lat: location.lat, lng: location.lng });
     } catch (err) {
       setError(err);
     } finally {
@@ -49,7 +53,14 @@ export const IPTrackProvider = ({ children }) => {
 
   return (
     <IPTrackContext.Provider
-      value={{ infosTrack, getIpTrackInfo, loading, error }}
+      value={{
+        infosTrack,
+        coordinates,
+        getIpTrackInfo,
+        setCoordinates,
+        loading,
+        error,
+      }}
     >
       {children}
     </IPTrackContext.Provider>
