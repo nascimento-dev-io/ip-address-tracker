@@ -6,6 +6,8 @@ export const Container = styled.header`
   width: 100%;
   height: 30vh;
 
+  position: relative;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,7 +34,7 @@ export const FormSearch = styled.form`
   input,
   button {
     padding: 15px;
-    font-size: 14px;
+    font-size: 18px;
 
     color: var(--primary-dark-gray);
   }

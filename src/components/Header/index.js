@@ -25,6 +25,7 @@ export const Header = () => {
           onChange={(e) => setInputSearch(e.target.value)}
           type="text"
           placeholder="Search for any IP address or domain"
+          required
         />
         <button type="submit">
           <img src={iconButton} alt="search button" />

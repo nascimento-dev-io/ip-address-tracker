@@ -3,8 +3,8 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyles = createGlobalStyle`
 
 :root{
-  --primary-dark-gray: #353a3d;
-  --secondary-dark-gray: #a8a8a8;
+  --primary-dark-gray:  hsl(0, 0%, 17%);
+  --secondary-dark-gray:  hsl(0, 0%, 59%);
 }
 
 html {

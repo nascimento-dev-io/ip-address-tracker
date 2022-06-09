@@ -4,7 +4,7 @@ import L from "leaflet";
 
 import { IPTrackContext } from "../../contexts/TrackContext";
 
-import { Container } from "./styles";
+import { Container, ErrorMessage } from "./styles";
 
 const myIcon = (_iconSize) => {
   return L.icon({
@@ -20,15 +20,15 @@ function UpdateMapCenter(props) {
 }
 
 export const MapLocation = () => {
-  const { coordinates, infosTrack } = useContext(IPTrackContext);
+  const { coordinates, infosTrack, error } = useContext(IPTrackContext);
 
   return (
     <Container>
       <MapContainer
-        center={[40.712776, -74.005974]}
-        zoom={13}
+        center={[-23.55052, -46.633308]}
+        zoom={14}
         scrollWheelZoom={true}
-        style={{ height: "70vh", zIndex: -1 }}
+        style={{ height: "70vh" }}
       >
         <UpdateMapCenter mapCenter={coordinates} />
         <TileLayer
@@ -41,6 +41,7 @@ export const MapLocation = () => {
           </Popup>
         </Marker>
       </MapContainer>
+      {error && <ErrorMessage>IP ou Domínio informado é inválido</ErrorMessage>}
     </Container>
   );
 };

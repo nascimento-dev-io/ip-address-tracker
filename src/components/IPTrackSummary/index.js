@@ -1,17 +1,12 @@
 import React, { useContext } from "react";
 
-import {
-  Container,
-  ErrorMessage,
-  InfosAddressContainer,
-  InfoAddress,
-} from "./styles";
+import { Container, InfosAddressContainer, InfoAddress } from "./styles";
 
 import { Loading } from "../Loading";
 import { IPTrackContext } from "../../contexts/TrackContext";
 
 export const IPTrackSummary = () => {
-  const { infosTrack, loading, error } = useContext(IPTrackContext);
+  const { infosTrack, loading } = useContext(IPTrackContext);
 
   return (
     <>
@@ -29,7 +24,6 @@ export const IPTrackSummary = () => {
           )}
         </InfosAddressContainer>
       </Container>
-      {error && <ErrorMessage>IP ou Domínio informado é inválido</ErrorMessage>}
     </>
   );
 };
