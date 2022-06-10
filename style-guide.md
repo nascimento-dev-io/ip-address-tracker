@@ -12,8 +12,6 @@ The designs were created to the following widths:
 - Very Dark Gray: hsl(0, 0%, 17%)
 - Dark Gray: hsl(0, 0%, 59%)
 
-## Typography
-
 ### Body Copy
 
 - Font size (text input): 18px
