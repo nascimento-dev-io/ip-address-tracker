@@ -31,7 +31,7 @@ export const IPTrackProvider = ({ children }) => {
       setError(false);
       const response = await axios.get(
         `https://geo.ipify.org/api/v2/country,city?apiKey=${
-          process.env.REACT_APP_API_KEY || process.env.API_KEY
+          process.env.REACT_APP_API_KEY
         }&${ipOrDomainType.toLowerCase()}`
       );
 
