@@ -41,7 +41,9 @@ export const MapLocation = () => {
           </Popup>
         </Marker>
       </MapContainer>
-      {error && <ErrorMessage>IP ou Domínio informado é inválido</ErrorMessage>}
+      {error && (
+        <ErrorMessage>Error: Check the IP or domain entered </ErrorMessage>
+      )}
     </Container>
   );
 };

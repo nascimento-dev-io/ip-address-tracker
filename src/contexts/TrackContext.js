@@ -3,8 +3,15 @@ import axios from "axios";
 
 export const IPTrackContext = createContext();
 
+console.log(process.env);
+
 export const IPTrackProvider = ({ children }) => {
-  const [infosTrack, setInfosTrack] = useState({});
+  const [infosTrack, setInfosTrack] = useState({
+    ip: "-",
+    location: "-",
+    timezone: "-",
+    isp: "-",
+  });
   const [coordinates, setCoordinates] = useState({ lat: 0, lng: 0 });
 
   const [loading, setLoading] = useState(false);
@@ -17,7 +24,7 @@ export const IPTrackProvider = ({ children }) => {
 
   const getIpTrackInfo = async (ipOrDomain) => {
     const regex = /^[0-9]/g;
-    const data = regex.test(ipOrDomain)
+    const ipOrDomainType = regex.test(ipOrDomain)
       ? `ipAddress=${ipOrDomain}`
       : `domain=${ipOrDomain}`;
 
@@ -25,7 +32,9 @@ export const IPTrackProvider = ({ children }) => {
       setLoading(true);
       setError(false);
       const response = await axios.get(
-        `https://geo.ipify.org/api/v2/country,city?apiKey=at_UcPGOp903hv8vnYHi9lnF52tcoIi2&${data}`
+        `https://geo.ipify.org/api/v2/country,city?apiKey=${
+          process.env.REACT_APP_API_KEY
+        }&${ipOrDomainType.toLowerCase()}`
       );
 
       const { ip, isp, location } = await response.data;
