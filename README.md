@@ -24,7 +24,7 @@ Users should be able to:
 
 ### Screenshot
 
-![gif](./src/assets/images/ip-tracker.gif)
+![gif](https://firebasestorage.googleapis.com/v0/b/web-apps-4659f.appspot.com/o/ip-tracker.gif?alt=media&token=c2ea0d33-b266-422e-a296-15c6d8b69b88)
 
 ### Links
 - Live Site URL: [https://ip-address-tracker-five-delta.vercel.app/](https://ip-address-tracker-five-delta.vercel.app/)
