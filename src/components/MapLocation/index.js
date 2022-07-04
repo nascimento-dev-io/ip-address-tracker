@@ -6,7 +6,7 @@ import { IPTrackContext } from "../../contexts/TrackContext";
 
 import { Container, ErrorMessage } from "./styles";
 
-const myIcon = (_iconSize) => {
+const locationIcon = (_iconSize) => {
   return L.icon({
     iconUrl: require("../../assets/images/icon-location.png"),
     iconSize: _iconSize,
@@ -35,7 +35,7 @@ export const MapLocation = () => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Marker position={coordinates} icon={myIcon([30, 30])}>
+        <Marker position={coordinates} icon={locationIcon([30, 30])}>
           <Popup>
             Localidade: {infosTrack.location} <br />
           </Popup>
